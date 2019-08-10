@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {%block main %}
+<div id="bkground" style="background-image: url(' https://www.plantsnap.com/wp-content/uploads/2018/10/flower-1.png'); height:500px;">
+    <div class=" main-container ">
+        <div class="grid-item " style="margin-top: 100px">
+            <figure>
+                <a class="camera_btn " href="{{url_for( 'camera') }}  " style="text-decoration:none; color:black;"><img id="gallery_icon " src="{{ url_for( 'static', filename='appimages/camera-icon.png' ) }} " />
+                    <figcaption>Take Photo</figcaption>
+                </a>
+            </figure>
+        </div>
+        <div class="grid-item " style="margin-top: 100px">
+            <figure>
+                <a class="upload-btn " href="{{ url_for( 'upload') }}" style="text-decoration:none; color:black "><img id="gallery_icon " style="width:260px; height:260px;  " src="{{ url_for( 'static', filename='appimages/gallery-icon.png' ) }} " />
+                    <figcaption>Upload Photo</figcaption>
+                </a>
+            </figure>
+        </div>
+    </div>
+</div>
+{% endblock %}

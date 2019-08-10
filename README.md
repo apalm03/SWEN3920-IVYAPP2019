@@ -1,0 +1,1 @@
+IVY Plant Identifier is an app designed and created to feed our curiosity about all kinds of plants that are unsure off and their benefits to our daily lives.

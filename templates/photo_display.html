@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block main %}
+<div>
+    {% include 'flash_messages.html' %}
+    <div class="img-container">
+
+
+        <img id="upload_image" src="{{ url_for('static', filename='uploads/' + photo )}}" height=400 width=600/> {{result}}
+
+    </div>
+    <!--<script src="{{url_for('static',filename='js/index.js') }}" type="text/javascript"></script>-->
+    <br>
+    <button id="btn" class="btn btn-primary">Predict</button>
+    <br>
+    <div id=response></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $('button#btn').click(function() {
+            $.ajax({
+                url: "/prediction/photo",
+                type: "POST",
+                datatype: "text",
+                success: function(resp) {
+                    $('div#response').append(resp.data);
+                }
+            });
+        });
+    </script>
+
+</div>{% endblock %}
